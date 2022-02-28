@@ -54,7 +54,7 @@ namespace MSGEdit
             lines.Add("");
             lines.Add("The unique way of organizing the data inside a TXT format was created by Owocek in his MSGTools convertion tool.");
             lines.Add("");
-            lines.Add("Please bear in mind that, unlike Patapon 3, the Patapon 1 and Patapon 2 message files have a *.pac extension (not to be confused with Patapon Assembly Packages).");
+            lines.Add("Please bear in mind that, unlike Patapon 3, the Patapon 1 and Patapon 2 message files have a *.pac extension (not to be confused with Patapon Assembly Code).");
             File.WriteAllLines("readme.txt", lines, Encoding.Unicode);
         }
         void check_readme() {
@@ -467,7 +467,8 @@ namespace MSGEdit
                 MessageBox.Show("Drop error: " + exept.Message, "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             if (!is_editing_in_progress || MessageBox.Show("Warning! This action will unload the file you are currently editing from the memory. Proceed?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes) {
-                if (System.IO.Path.GetExtension(filename) != ".msg") {
+                string extension = System.IO.Path.GetExtension(filename);
+                if (extension != ".msg" && extension != ".pac") {
                     load_file(filename, PataponMessageFormat.TXT);
                 }
                 else {
