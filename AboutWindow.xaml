@@ -1,0 +1,27 @@
+﻿<Window x:Name="about_window" x:Class="MSGEdit.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MSGEdit"
+        mc:Ignorable="d"
+        Title="About" Height="250" Width="300" ResizeMode="CanMinimize" Closed="About_window_Closed" WindowStartupLocation="CenterOwner" Background="#FFF0F0F0">
+    <Grid>
+        <Button x:Name="cancel_button" Content="Cancel" HorizontalAlignment="Left" Margin="112,188,0,0" VerticalAlignment="Top" Width="76" IsDefault="True" IsCancel="True" Click="Cancel_button_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
+            <Bold>MSGEdit</Bold> <Underline>(version 4.0)</Underline> <LineBreak/>
+            This tool can be used to view, edit or convert Patapon message files to the readable format. <LineBreak/>
+            Console argument support as well as the search support are fully implemented.
+            The readme.txt file contains a thorough explanation of all the features. <LineBreak/>
+            You can learn more about using regular expressions in Microsoft official website: <LineBreak/>
+            <Hyperlink x:Name="regex_docs_hyperlink" NavigateUri="https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=net-6.0" RequestNavigate="OpenHyperLinkInBrowser"> 
+                Regex class documentation
+            </Hyperlink>
+            <LineBreak/>
+            <LineBreak/>
+            <Span xml:space="preserve"><Bold>Made by Nemoumbra © 2022</Bold>        <Hyperlink x:Name="github_hyperlink" NavigateUri="https://github.com/Nemoumbra/MSGEdit" RequestNavigate="OpenHyperLinkInBrowser">(Github link)</Hyperlink></Span>
+            <!--
+            <Bold>Made by Nemoumbra © 2022</Bold> <Hyperlink x:Name="github_hyperlink" NavigateUri="https://github.com/Nemoumbra/MSGEdit" RequestNavigate="OpenHyperLinkInBrowser">(Github link)</Hyperlink>-->
+        </TextBlock>
+    </Grid>
+</Window>

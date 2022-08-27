@@ -1,0 +1,28 @@
+﻿<Window x:Name="search_window" x:Class="MSGEdit.SearchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MSGEdit"
+        mc:Ignorable="d"
+        Title="Search" Height="200" Width="500" ResizeMode="NoResize" Closed="Search_window_Closed" Loaded="Search_window_Loaded" WindowStartupLocation="CenterOwner" Background="#FFF0F0F0" PreviewKeyDown="Search_window_PreviewKeyDown" Icon="sukopon_final.ico">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="21,15,0,0" TextWrapping="Wrap" Text="Enter search text:" VerticalAlignment="Top"/>
+        <TextBox x:Name="search_textbox" HorizontalAlignment="Left" Height="19" Margin="126,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" SelectionBrush="#FF0078D7" TextChanged="Search_textbox_TextChanged"/>
+        <Button x:Name="cancel_button" Content="_Cancel" HorizontalAlignment="Left" Margin="384,126,0,0" VerticalAlignment="Top" Width="75" IsCancel="True" Click="Cancel_button_Click"/>
+        <CheckBox x:Name="regex_checkbox" Content="_RegEx" HorizontalAlignment="Left" Margin="21,138,0,0" VerticalAlignment="Top" Checked="Regex_checkbox_Checked" Unchecked="Regex_checkbox_Unchecked"/>
+        <CheckBox x:Name="whole_words_checkbox" Content="_Whole words only" HorizontalAlignment="Left" Margin="21,47,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="case_sensitive_checkbox" Content="Case s_ensitive" HorizontalAlignment="Left" Margin="21,65,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="search_starts_from_selected_index_checkbox" Content="_Search starts from selected index" HorizontalAlignment="Left" Margin="21,83,0,0" VerticalAlignment="Top" IsChecked="True" Checked="Search_start_checkbox_Checked" Unchecked="Search_start_checkbox_Unchecked"/>
+        <Button x:Name="find_next_button" Content="Find _Next" HorizontalAlignment="Left" Margin="384,47,0,0" VerticalAlignment="Top" Width="75" IsDefault="True" Click="Find_next_button_Click"/>
+        <Button x:Name="find_all_button" Content="Find _All" HorizontalAlignment="Left" Margin="384,73,0,0" VerticalAlignment="Top" Width="75" Click="Find_all_button_Click"/>
+        <CheckBox x:Name="search_backwards_checkbox" Content="Search _backwards" HorizontalAlignment="Left" Margin="21,101,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="start_index_textbox" HorizontalAlignment="Left" Margin="177,139,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" IsEnabled="False" TextChanged="Start_index_textbox_TextChanged" MaxLength="10" PreviewKeyDown="FilterInput"/>
+        <TextBlock x:Name="start_index_textblock" HorizontalAlignment="Left" Height="13" Margin="114,139,0,0" TextWrapping="Wrap" Text="Start index:" VerticalAlignment="Top" Width="64" IsEnabled="False"/>
+        <Button x:Name="help_button" Content="_Help" HorizontalAlignment="Left" Margin="384,99,0,0" VerticalAlignment="Top" Width="75" Click="Help_button_Click"/>
+        <CheckBox x:Name="cycle_search_checkbox" Content="C_ycle search" HorizontalAlignment="Left" Margin="21,120,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <ComboBox x:Name="search_results_combobox" HorizontalAlignment="Left" Margin="249,47,0,0" VerticalAlignment="Top" Width="120" IsEditable="True" SelectionChanged="Search_results_combobox_SelectionChanged"/>
+
+    </Grid>
+</Window>
