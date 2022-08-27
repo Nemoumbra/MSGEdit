@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 /// <summary>
@@ -6,16 +6,18 @@ using System.ComponentModel;
 /// </summary>
 
 public class Settings {
-    public bool enable_warnings, check_readme, deduce_file_type;
+    public bool enable_warnings, check_readme, deduce_file_type, autopaste_from_clipboard;
     public Settings() {
         enable_warnings = true;
         check_readme = true;
-        deduce_file_type = false;
+        deduce_file_type = true;
+        autopaste_from_clipboard = false;
     }
     public void restore_default_settings() {
         enable_warnings = true;
         check_readme = true;
-        deduce_file_type = false;
+        deduce_file_type = true;
+        autopaste_from_clipboard = false;
     }
 }
 
@@ -52,9 +54,8 @@ public class PataponMessage : INotifyPropertyChanged {
     public PataponMessage(string msg) {
         Message = msg;
     }
-    //public string To
-
 }
+
 /*public class MessageCollection : INotifyPropertyChanged {
     public event PropertyChangedEventHandler PropertyChanged;
     private void NotifyPropertyChanged(string property_name = "")
